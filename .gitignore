@@ -1,0 +1,22 @@
+# Ambiente virtuale Python
+.venv/
+
+# Dati locali (DB SQLite e configurazione privata con eventuali token)
+instance/
+
+# File compilati Python — generati automaticamente, non fanno parte del codice
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Metadati del pacchetto generati da pip install -e .
+*.egg-info/
+dist/
+build/
+
+# Impostazioni editor (opzionale — alcuni preferiscono versionarle)
+.vscode/
+
+# Variabili d'ambiente con segreti
+.env
