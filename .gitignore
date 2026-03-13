@@ -20,3 +20,5 @@ build/
 
 # Variabili d'ambiente con segreti
 .env
+
+request.http
