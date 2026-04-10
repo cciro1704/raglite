@@ -32,4 +32,7 @@ def create_app(test_config: dict | None = None) -> Flask:
     from . import rag
     app.register_blueprint(rag.bp)
 
+    from . import db
+    db.init_app(app)
+    
     return app
