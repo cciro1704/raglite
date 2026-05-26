@@ -49,9 +49,14 @@ def chunk_text(text: str, size: int, overlap: int) -> list[tuple[int, str]]:
         # Aggiungi frasi intere finché il chunk resta entro size.
         # Poi salva (chunk_id, testo_chunk) e avanza lasciando overlap frasi in comune.
 
-        while j < len(sentences) and char_count < size:
+        while j < len(sentences):
             s = sentences[j]
-            if char_count + len(s)<= size:
+            if not acc:
+        # Forza almeno una frase per evitare loop infinito
+                acc.append(s)
+                char_count += len(s)
+                j += 1
+            elif char_count + len(s) <= size:
                 acc.append(s)
                 char_count += len(s)
                 j += 1

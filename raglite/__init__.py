@@ -20,6 +20,8 @@ def create_app(test_config: dict | None = None) -> Flask:
     app.config.from_mapping(
         SECRET_KEY="dev",  
         DATABASE=os.path.join(app.instance_path, "raglite.sqlite"),  # TODO: leggi da app il path giusto
+        RAG_CHUNK_SIZE=110,
+        RAG_CHUNK_OVERLAP=1,
     )
 
     if test_config is None:
