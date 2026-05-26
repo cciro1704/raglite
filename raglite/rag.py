@@ -4,6 +4,10 @@ from __future__ import annotations
 
 from flask import Blueprint, jsonify
 from . import db 
+from datetime import datetime, timezone
+from flask import Blueprint, current_app, jsonify, request
+from .chunking import chunk_text
+from .embedding import embed_text, vector_to_blob
 
 bp = Blueprint("rag", __name__) 
 
